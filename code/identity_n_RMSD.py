@@ -11,11 +11,11 @@ obtenida. """
 __author__  = 'Bruno Contreras-Moreira' 
 
 # 0) parametros del algoritmo: 
-pdb1 = { 'file':'./files/1gd6.pdb', 
+pdb1 = { 'file':'./foldmason_monopdb/', # Input file
 	'align':'KTFTRCGLVHELRKHGFEEN---LMRNWVCLVEHESSRDTSKTNTNR-NGSKDYGLFQIN' +
 	'DRYWCSKGASPG--KDCNVKCSDLLTDDITKAAKCAKKIYKR-HRFDAWYGWKNHCQG--SLPDISSC--' };
 
-pdb2 = { 'file':'./files/2nwd.pdb', 
+pdb2 = { 'file':'./foldmason_monopdb/', # Input file
 	'align':'KVFERCELARTLKRLGMDGYRGISLANWMCLAKWESGYNTRATNYNAGDRSTDYGIFQIN' +
 	'SRYWCNDGKTPGAVNACHLSCSALLQDNIADAVACAKRVVRDPQGIRAWVAWRNRCQNRDVRQYVQGCGV' };
 	
