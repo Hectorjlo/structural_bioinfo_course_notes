@@ -196,7 +196,39 @@ def calcula_superposicion_SVD(pdbh1,pdbh2,originalPDBname,fittedPDBname,test=Fal
     pdbfile.close()	
 	
     return sqrt(rmsd)
-					
+
+# Usando un Option-like enum de Rust
+from typing import Optional
+def calcula_identidad(align1: str, align2: str) -> Optional[float]:
+    """Compara los dos Strings (str), calcula los matches (+1 para un match),
+    divide entre el total y multiplica por 100"""
+
+    # Necesita longitudes iguales entre las sequencias (str)
+    if len(align1) != len(align2):
+        print("[ERROR] Alineamientos/Sequencias tienen longitudes diferentes.")
+        return None
+    
+    matches = 0
+    total_aligned = 0
+
+    for r in range(len(align1)):
+        residue1 = align1[r]
+        residue2 = align2[r]
+
+        # Si son ambos gaps, se ignora
+        if residue1 == '-' and residue2 == '-':
+            continue
+          
+        total_aligned += 1
+         
+        # Si ambos coinciden en el mismo residuo
+        if residue1 == residue2 and residue1 != '-':
+            matches += 1
+    
+    # Si todo fue gaps nunca se incremento total_aligned y retorna 0.0
+    if total_aligned == 0: return 0.0
+
+    return (float(matches) / total_aligned) * 100
 
 # 2) programa principal ###################################################
 
@@ -209,6 +241,13 @@ print("# total residuos: pdb1 = %s pdb2 = %s\n" % (len(pdb1['coords']),len(pdb2[
 						pdb2['align'],pdb2['coords'] )
 
 print("# total residuos alineados = %s\n" % (len(pdb1['align_coords'])))
+
+# Calculo de identidad
+identidad = calcula_identidad(pdb1['align'], pdb2['align'])
+if identidad is not None:
+    print(f"# Identidad de secuencia: {identidad:.3f}%")
+else:
+    print("# Se fallo al intentar calcular la identidad")
 
 rmsd = calcula_superposicion_SVD(pdb2,pdb1,'original.pdb','align_fit.pdb')
 
