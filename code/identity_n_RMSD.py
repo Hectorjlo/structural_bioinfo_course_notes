@@ -9,7 +9,9 @@ secuencia de dos proteinas del PDB. Genera un fichero PDB con la superposicion
 obtenida. """
 
 __author__  = 'Bruno Contreras-Moreira' 
-
+# 
+# !!!!!!!!!! Double check that file and align are from the same domain
+# 
 # 0) parametros del algoritmo: 
 pdb1 = { 'file':'../foldseekdotcom_downloads/foldmason_monopdb/1Q3Bcif.pdb', # Input file
 	'align':'PEGPEIRRAADNLEAAIKGKPLTDVWFAFPQLKTYQSQLIGQHVTHVETRGKALLTHFSNDLTLYSHNQLYGVWR' +
@@ -17,7 +19,7 @@ pdb1 = { 'file':'../foldseekdotcom_downloads/foldmason_monopdb/1Q3Bcif.pdb', # I
     'FRNRQFAGLLLDQAFLAGLGNYLRVEILWQVGLTGNHKAKDLNAAQLDALAHALLEIPRFSYAT---------RG' +
     'ALFRFKVFHRDGEPCERCGSIIEKTTLSSRPFYWCPGCQH'};
 #
-pdb2 = { 'file':'../foldseekdotcom_downloads/foldmason_monopdb/1Q3Bcif.pdb', # Input file
+pdb2 = { 'file':'../foldseekdotcom_downloads/foldmason_monopdb/6FBUcif_A.pdb', # Input file
 	'align':'PQGPEIRRAADNLEAAIKGKPLTDVWFAFPQLKTYQSQLIGQHVTHVETRGKALLTHFSNDLTLYSHNQLYGVWR' +
 	'VVDTGEEPQTTRVLRVKLQTADKTILLYSASDIEMLRPEQLTTHPFLQRVGPDVLDPNLTPEVVKERLLSPRFRN' +
     'RQFAGLLLDQAFLAGLGNYLRVEILWQVGLTGNHKAKDLNAAQLDALAHALLEIPRFSYATRGQ--------ALF' +
