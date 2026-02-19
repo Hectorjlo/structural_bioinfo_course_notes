@@ -1,0 +1,36 @@
+[{
+ "name": "EGR1-DNA-trimmed",
+ "modelSeeds": [
+  "2013723363"
+ ],
+ "sequences": [
+  {
+   "proteinChain": {
+    "sequence": "ERPYACPVESCDRRFSRSDELTRHIRIHTGQKPFQCRICMRNFSRSDHLTTHIRTHTGEKPFACDICGRKFARSDERKRHTKIHLRQKD",
+    "count": 1,
+    "useStructureTemplate": true
+   }
+  },
+  {
+   "dnaSequence": {
+    "sequence": "AATTGCGGGGGCGGGGCGAATT",
+    "count": 1
+   }
+  },
+  {
+   "dnaSequence": {
+    "sequence": "TTAACGCCCCCGCCCCGCTTAA",
+    "count": 1
+   }
+  },
+  {
+   "ion": {
+    "ion": "ZN",
+    "count": 3
+   }
+  }
+ ],
+ "dialect": "alphafoldserver",
+ "version": 1
+}
+]
